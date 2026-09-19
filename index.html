@@ -7,317 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --color-bg: #fff8f0;
-    --color-primary: #d84315;
-    --color-primary-dark: #a5290c;
-    --color-gold: #f2a900;
-    --color-text: #3e2723;
-    --color-card-bg: #ffffff;
-    --color-muted: #8d6e63;
-  }
-
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    margin: 0;
-    font-family: 'Prompt', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-    background: var(--color-bg);
-    color: var(--color-text);
-    line-height: 1.6;
-  }
-
-  header {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: #fff;
-    text-align: center;
-    padding: 4rem 1.5rem 3.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-
-  header::before {
-    content: "🌶️ 🍋 🥥 🌿 🍚";
-    position: absolute;
-    top: -10px;
-    left: 0;
-    right: 0;
-    font-size: 1.5rem;
-    opacity: 0.35;
-    letter-spacing: 2rem;
-    text-align: center;
-    white-space: nowrap;
-  }
-
-  header h1 {
-    font-size: clamp(2rem, 5vw, 3rem);
-    margin: 0.5rem 0 0.75rem;
-    font-weight: 700;
-  }
-
-  header p {
-    font-size: clamp(1rem, 2.5vw, 1.2rem);
-    max-width: 640px;
-    margin: 0 auto;
-    color: #ffe6d9;
-  }
-
-  main {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 3rem 1.5rem 4rem;
-  }
-
-  .section-title {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-
-  .section-title h2 {
-    font-size: clamp(1.5rem, 3vw, 2rem);
-    color: var(--color-primary-dark);
-    margin-bottom: 0.5rem;
-  }
-
-  .section-title p {
-    color: var(--color-muted);
-    margin: 0;
-  }
-
-  .menu-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.75rem;
-  }
-
-  .card {
-    position: relative;
-    background: var(--color-card-bg);
-    border-radius: 16px;
-    padding: 1.75rem 1.5rem;
-    box-shadow: 0 4px 14px rgba(216, 67, 21, 0.08);
-    border: 1px solid rgba(216, 67, 21, 0.08);
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
-    text-align: center;
-  }
-
-  .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 12px 24px rgba(216, 67, 21, 0.18);
-  }
-
-  .card .emoji {
-    font-size: 3rem;
-    display: inline-block;
-    margin-bottom: 0.75rem;
-  }
-
-  .card .dish-photo {
-    display: block;
-    width: 100%;
-    height: 180px;
-    margin: 0 0 1rem;
-    border-radius: 12px;
-    object-fit: cover;
-    object-position: center;
-  }
-
-  .card h3 {
-    margin: 0 0 0.6rem;
-    font-size: 1.25rem;
-    color: var(--color-primary-dark);
-  }
-
-  .card p {
-    margin: 0;
-    color: var(--color-muted);
-    font-size: 0.95rem;
-  }
-
-  .tag {
-    display: inline-block;
-    margin-top: 0.9rem;
-    padding: 0.25rem 0.75rem;
-    background: rgba(242, 169, 0, 0.15);
-    color: #a86b00;
-    border-radius: 999px;
-    font-size: 0.8rem;
-    font-weight: 500;
-  }
-
-  .fav-btn {
-    position: absolute;
-    top: 0.85rem;
-    right: 0.85rem;
-    background: none;
-    border: none;
-    font-size: 1.4rem;
-    line-height: 1;
-    cursor: pointer;
-    padding: 0.25rem;
-    color: var(--color-primary);
-    transition: transform 0.15s ease;
-    user-select: none;
-  }
-
-  .fav-btn:hover {
-    transform: scale(1.2);
-  }
-
-  .fav-btn.is-fav {
-    animation: pop 0.3s ease;
-  }
-
-  @keyframes pop {
-    0% { transform: scale(1); }
-    50% { transform: scale(1.35); }
-    100% { transform: scale(1); }
-  }
-
-  .random-box {
-    max-width: 640px;
-    margin: 0 auto 3rem;
-    text-align: center;
-    background: var(--color-card-bg);
-    border: 2px dashed rgba(216, 67, 21, 0.25);
-    border-radius: 16px;
-    padding: 2rem 1.5rem;
-  }
-
-  .random-btn {
-    font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #fff;
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    border: none;
-    border-radius: 999px;
-    padding: 0.85rem 1.75rem;
-    cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 4px 14px rgba(216, 67, 21, 0.25);
-  }
-
-  .random-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(216, 67, 21, 0.35);
-  }
-
-  .random-btn:active {
-    transform: translateY(0);
-  }
-
-  .random-result {
-    margin-top: 1rem;
-    font-size: 1.15rem;
-    font-weight: 600;
-    color: var(--color-primary-dark);
-    min-height: 1.6rem;
-    opacity: 1;
-    transition: opacity 0.3s ease;
-  }
-
-  .random-result.fade {
-    opacity: 0;
-  }
-
-  .filter-box {
-    max-width: 720px;
-    margin: 0 auto 2.5rem;
-  }
-
-  .search-input {
-    display: block;
-    width: 100%;
-    font-family: inherit;
-    font-size: 1rem;
-    padding: 0.85rem 1.1rem;
-    border: 2px solid rgba(216, 67, 21, 0.15);
-    border-radius: 999px;
-    background: var(--color-card-bg);
-    color: var(--color-text);
-    outline: none;
-    transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  }
-
-  .search-input:focus {
-    border-color: var(--color-primary);
-    box-shadow: 0 0 0 4px rgba(216, 67, 21, 0.12);
-  }
-
-  .category-filters {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 0.6rem;
-    margin-top: 1rem;
-  }
-
-  .category-btn {
-    font-family: inherit;
-    font-size: 0.9rem;
-    font-weight: 500;
-    color: var(--color-primary-dark);
-    background: rgba(242, 169, 0, 0.12);
-    border: 1px solid rgba(216, 67, 21, 0.15);
-    border-radius: 999px;
-    padding: 0.5rem 1.1rem;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease, transform 0.15s ease;
-  }
-
-  .category-btn:hover {
-    transform: translateY(-1px);
-  }
-
-  .category-btn.active {
-    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
-    color: #fff;
-    border-color: transparent;
-  }
-
-  .no-results {
-    text-align: center;
-    color: var(--color-muted);
-    padding: 2.5rem 1rem;
-    display: none;
-  }
-
-  .no-results.show {
-    display: block;
-  }
-
-  .card.is-hidden {
-    display: none;
-  }
-
-  footer {
-    text-align: center;
-    padding: 2rem 1.5rem;
-    background: var(--color-primary-dark);
-    color: #ffe6d9;
-    font-size: 0.9rem;
-  }
-
-  footer strong {
-    color: #fff;
-  }
-
-  @media (max-width: 480px) {
-    header {
-      padding: 3rem 1rem 2.5rem;
-    }
-    main {
-      padding: 2rem 1rem 3rem;
-    }
-    .card {
-      padding: 1.5rem 1.25rem;
-    }
-  }
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
@@ -357,6 +47,7 @@
       <h3>ต้มยำกุ้ง</h3>
       <p>ซุปรสเปรี้ยวเผ็ดจัดจ้าน หอมตะไคร้ ใบมะกรูด และข่า ใส่กุ้งแม่น้ำตัวโต เป็นเอกลักษณ์ของไทยที่โด่งดังไปทั่วโลก</p>
       <span class="tag">ต้ม • เผ็ดเปรี้ยว</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ผัดไทย" data-category="ผัด">
@@ -365,6 +56,7 @@
       <h3>ผัดไทย</h3>
       <p>เส้นจันท์ผัดกับไข่ เต้าหู้ กุ้งแห้ง ถั่วงอก ปรุงรสเปรี้ยวหวานเค็มกลมกล่อม โรยถั่วลิสงบดและมะนาว</p>
       <span class="tag">ผัด • เปรี้ยวหวาน</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="แกงเขียวหวาน" data-category="แกง">
@@ -373,6 +65,7 @@
       <h3>แกงเขียวหวาน</h3>
       <p>แกงกะทิรสเผ็ดหอมเครื่องแกงเขียว ใส่เนื้อไก่หรือลูกชิ้นปลา มะเขือเปราะ และใบโหระพา หอมมันกลมกล่อม</p>
       <span class="tag">แกง • เผ็ดกะทิ</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ส้มตำ" data-category="ยำ">
@@ -381,6 +74,7 @@
       <h3>ส้มตำ</h3>
       <p>มะละกอเขียวสับผสมมะเขือเทศ ถั่วฝักยาว ปรุงรสเปรี้ยวเผ็ดเค็มหวานจัดจ้าน กินคู่กับข้าวเหนียวและไก่ย่าง</p>
       <span class="tag">ยำ • เผ็ดจัด</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="มัสมั่น" data-category="แกง">
@@ -389,6 +83,7 @@
       <h3>มัสมั่น</h3>
       <p>แกงกะทิรสหวานมันออกเปรี้ยวนิดๆ ใส่เนื้อหรือไก่ตุ๋นนุ่ม มันฝรั่ง ถั่วลิสง หอมเครื่องเทศ เคยติดอันดับอาหารอร่อยที่สุดในโลก</p>
       <span class="tag">แกง • หวานมัน</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ข้าวผัด" data-category="ผัด">
@@ -397,6 +92,7 @@
       <h3>ข้าวผัด</h3>
       <p>ข้าวผัดกับไข่ หอมใหญ่ และเนื้อสัตว์ตามชอบ ปรุงรสง่ายๆ แต่หอมกลิ่นกระทะร้อน กินคู่กับแตงกวาและมะนาว</p>
       <span class="tag">ผัด • เค็มกลมกล่อม</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ต้มข่าไก่" data-category="ต้ม">
@@ -405,6 +101,7 @@
       <h3>ต้มข่าไก่</h3>
       <p>ซุปกะทิหอมข่า ตะไคร้ ใบมะกรูด รสเปรี้ยวเผ็ดนุ่มนวลกว่าต้มยำ เนื้อสัมผัสข้นมันจากกะทิ</p>
       <span class="tag">ต้ม • หอมกะทิ</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ผัดกะเพรา" data-category="ผัด">
@@ -413,6 +110,7 @@
       <h3>ผัดกะเพรา</h3>
       <p>ผัดเนื้อสับหรือหมูสับกับใบกะเพราและพริก รสเผ็ดร้อนจัดจ้าน กินคู่ข้าวสวยร้อนๆ และไข่ดาว เมนูโปรดของคนไทยทุกวัย</p>
       <span class="tag">ผัด • เผ็ดร้อน</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
     <div class="card" data-dish="ข้าวเหนียวมะม่วง" data-category="ของหวาน">
@@ -421,6 +119,7 @@
       <h3>ข้าวเหนียวมะม่วง</h3>
       <p>ข้าวเหนียวมูนหอมกะทิ เคียงมะม่วงสุกหวานฉ่ำ ราดหน้าด้วยกะทิข้นๆ ของหวานไทยที่ชาวต่างชาติหลงรัก</p>
       <span class="tag">ของหวาน • หวานมัน</span>
+      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
     </div>
 
   </div>
@@ -479,6 +178,13 @@
   }
 
   var favorites = getFavorites();
+
+  document.querySelectorAll('.card').forEach(function (card) {
+    var link = card.querySelector('.detail-link');
+    if (link) {
+      link.href = 'detail.html?dish=' + encodeURIComponent(card.dataset.dish);
+    }
+  });
 
   document.querySelectorAll('.fav-btn').forEach(function (btn) {
     var dish = btn.closest('.card').dataset.dish;

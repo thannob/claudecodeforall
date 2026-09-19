@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ส่วนประกอบเมนู | แนะนำอาหารไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+  <a class="back-link" href="index.html">← กลับไปหน้ารวมเมนู</a>
+  <h1 id="detail-title">รายละเอียดเมนู</h1>
+  <p id="detail-tag"></p>
+</header>
+
+<main class="detail-main">
+  <div class="detail-card" id="detail-card"></div>
+  <p class="no-results" id="detail-not-found">ไม่พบเมนูที่คุณค้นหา ลองกลับไปเลือกเมนูใหม่จากหน้ารวมเมนูนะ 🙏</p>
+</main>
+
+<footer>
+  <p>ทำที่บ้านหรือหาชิมที่ร้านโปรดใกล้บ้านคุณ แล้วมาลิ้มลอง <strong>รสชาติไทยแท้</strong> กันวันนี้ 🇹🇭</p>
+</footer>
+
+<script src="menu-data.js"></script>
+<script>
+(function () {
+  var params = new URLSearchParams(window.location.search);
+  var dishName = params.get('dish');
+  var dish = window.menuData.find(function (d) {
+    return d.name === dishName;
+  });
+
+  var titleEl = document.getElementById('detail-title');
+  var tagEl = document.getElementById('detail-tag');
+  var cardEl = document.getElementById('detail-card');
+  var notFoundEl = document.getElementById('detail-not-found');
+
+  if (!dish) {
+    titleEl.textContent = 'ไม่พบเมนูนี้';
+    cardEl.style.display = 'none';
+    notFoundEl.classList.add('show');
+    return;
+  }
+
+  document.title = dish.name + ' | ส่วนประกอบเมนู';
+  titleEl.textContent = dish.name;
+  tagEl.innerHTML = '<span class="tag detail-tag">' + dish.tag + '</span>';
+
+  var mediaHtml = dish.image
+    ? '<img class="dish-photo" src="' + dish.image + '" alt="' + dish.name + '" loading="lazy">'
+    : '<span class="emoji detail-emoji">' + dish.emoji + '</span>';
+
+  var ingredientsHtml = dish.ingredients.map(function (item) {
+    return '<li>' + item + '</li>';
+  }).join('');
+
+  cardEl.innerHTML =
+    mediaHtml +
+    '<p class="detail-description">' + dish.description + '</p>' +
+    '<h2 class="ingredients-title">🧂 ส่วนประกอบ</h2>' +
+    '<ul class="ingredients-list">' + ingredientsHtml + '</ul>';
+})();
+</script>
+
+</body>
+</html>
