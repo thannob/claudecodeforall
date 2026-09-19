@@ -6,128 +6,163 @@
 <title>แนะนำอาหารไทย</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<header>
-  <h1>🇹🇭 แนะนำอาหารไทย</h1>
-  <p>รวมเมนูอาหารไทยยอดนิยม รสชาติจัดจ้าน หอมสมุนไพร ที่ไม่ว่าใครก็ต้องหลงรัก</p>
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">แนะนำอาหารไทย</a>
+    <a class="pill-outline" href="#random-box">สุ่มเมนู</a>
+  </div>
 </header>
 
+<section class="hero">
+  <img class="hero-photo" src="images/tomyum-goong.png" alt="ต้มยำกุ้ง">
+  <div class="hero-overlay">
+    <p class="eyebrow">รสชาติไทยแท้ ก้องโลก</p>
+    <h1 class="hero-title">แนะนำ<br>อาหารไทย</h1>
+    <p class="hero-sub">รวมเมนูอาหารไทยยอดนิยม รสชาติจัดจ้าน หอมสมุนไพร ที่ไม่ว่าใครก็ต้องหลงรัก</p>
+    <a class="pill-fill" href="detail.html?dish=ต้มยำกุ้ง">ดูส่วนประกอบต้มยำกุ้ง →</a>
+  </div>
+</section>
+
 <main>
-  <div class="random-box">
-    <button id="random-btn" class="random-btn" type="button">🎲 สุ่มเมนูอาหารไทยวันนี้</button>
+  <section class="random-box" id="random-box">
+    <p class="eyebrow">เมนูสุ่มวันนี้</p>
+    <h2 class="section-heading">ให้เราเลือกให้คุณ</h2>
+    <button id="random-btn" class="pill-fill" type="button">🎲 สุ่มเมนูอาหารไทยวันนี้</button>
     <p id="random-result" class="random-result">กดปุ่มเพื่อสุ่มเมนูเด็ดวันนี้!</p>
-  </div>
+  </section>
 
-  <div class="section-title">
-    <h2>เมนูแนะนำ</h2>
-    <p>คัดสรรอาหารไทยขึ้นชื่อ ตั้งแต่ของคาวจัดจ้านไปจนถึงของหวานหอมหวาน</p>
-  </div>
-
-  <div class="filter-box">
-    <input id="search-input" class="search-input" type="text" placeholder="🔍 ค้นหาเมนู เช่น ผัดไทย, เผ็ด, กะทิ..." aria-label="ค้นหาเมนู">
-    <div class="category-filters" id="category-filters">
-      <button class="category-btn active" type="button" data-category="all">ทั้งหมด</button>
-      <button class="category-btn" type="button" data-category="ต้ม">ต้ม</button>
-      <button class="category-btn" type="button" data-category="ผัด">ผัด</button>
-      <button class="category-btn" type="button" data-category="แกง">แกง</button>
-      <button class="category-btn" type="button" data-category="ยำ">ยำ</button>
-      <button class="category-btn" type="button" data-category="ของหวาน">ของหวาน</button>
-    </div>
-  </div>
-
-  <div class="menu-grid" id="menu-grid">
-
-    <div class="card" data-dish="ต้มยำกุ้ง" data-category="ต้ม">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <img class="dish-photo" src="images/tomyum-goong.png" alt="ต้มยำกุ้ง" loading="lazy">
-      <h3>ต้มยำกุ้ง</h3>
-      <p>ซุปรสเปรี้ยวเผ็ดจัดจ้าน หอมตะไคร้ ใบมะกรูด และข่า ใส่กุ้งแม่น้ำตัวโต เป็นเอกลักษณ์ของไทยที่โด่งดังไปทั่วโลก</p>
-      <span class="tag">ต้ม • เผ็ดเปรี้ยว</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+  <section class="section" id="menu-section">
+    <div class="section-title">
+      <p class="eyebrow">เมนูแนะนำ</p>
+      <h2 class="section-heading">คัดสรรอาหารไทยขึ้นชื่อ</h2>
+      <p class="section-sub">ตั้งแต่ของคาวจัดจ้านไปจนถึงของหวานหอมหวาน</p>
     </div>
 
-    <div class="card" data-dish="ผัดไทย" data-category="ผัด">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🍜</span>
-      <h3>ผัดไทย</h3>
-      <p>เส้นจันท์ผัดกับไข่ เต้าหู้ กุ้งแห้ง ถั่วงอก ปรุงรสเปรี้ยวหวานเค็มกลมกล่อม โรยถั่วลิสงบดและมะนาว</p>
-      <span class="tag">ผัด • เปรี้ยวหวาน</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+    <div class="filter-box">
+      <input id="search-input" class="search-input" type="text" placeholder="ค้นหาเมนู เช่น ผัดไทย, เผ็ด, กะทิ..." aria-label="ค้นหาเมนู">
+      <div class="category-tabs" id="category-filters">
+        <button class="category-tab active" type="button" data-category="all">ทั้งหมด</button>
+        <button class="category-tab" type="button" data-category="ต้ม">ต้ม</button>
+        <button class="category-tab" type="button" data-category="ผัด">ผัด</button>
+        <button class="category-tab" type="button" data-category="แกง">แกง</button>
+        <button class="category-tab" type="button" data-category="ยำ">ยำ</button>
+        <button class="category-tab" type="button" data-category="ของหวาน">ของหวาน</button>
+      </div>
     </div>
 
-    <div class="card" data-dish="แกงเขียวหวาน" data-category="แกง">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🥘</span>
-      <h3>แกงเขียวหวาน</h3>
-      <p>แกงกะทิรสเผ็ดหอมเครื่องแกงเขียว ใส่เนื้อไก่หรือลูกชิ้นปลา มะเขือเปราะ และใบโหระพา หอมมันกลมกล่อม</p>
-      <span class="tag">แกง • เผ็ดกะทิ</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+    <div class="menu-grid" id="menu-grid">
+
+      <div class="card" data-dish="ต้มยำกุ้ง" data-category="ต้ม">
+        <div class="card-media">
+          <img class="dish-photo" src="images/tomyum-goong.png" alt="ต้มยำกุ้ง" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ต้มยำกุ้ง</h3>
+        <span class="tag">ต้ม • เผ็ดเปรี้ยว</span>
+        <p>ซุปรสเปรี้ยวเผ็ดจัดจ้าน หอมตะไคร้ ใบมะกรูด และข่า ใส่กุ้งแม่น้ำตัวโต เป็นเอกลักษณ์ของไทยที่โด่งดังไปทั่วโลก</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ผัดไทย" data-category="ผัด">
+        <div class="card-media">
+          <span class="emoji-tile">🍜</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ผัดไทย</h3>
+        <span class="tag">ผัด • เปรี้ยวหวาน</span>
+        <p>เส้นจันท์ผัดกับไข่ เต้าหู้ กุ้งแห้ง ถั่วงอก ปรุงรสเปรี้ยวหวานเค็มกลมกล่อม โรยถั่วลิสงบดและมะนาว</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="แกงเขียวหวาน" data-category="แกง">
+        <div class="card-media">
+          <span class="emoji-tile">🥘</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>แกงเขียวหวาน</h3>
+        <span class="tag">แกง • เผ็ดกะทิ</span>
+        <p>แกงกะทิรสเผ็ดหอมเครื่องแกงเขียว ใส่เนื้อไก่หรือลูกชิ้นปลา มะเขือเปราะ และใบโหระพา หอมมันกลมกล่อม</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ส้มตำ" data-category="ยำ">
+        <div class="card-media">
+          <span class="emoji-tile">🥗</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ส้มตำ</h3>
+        <span class="tag">ยำ • เผ็ดจัด</span>
+        <p>มะละกอเขียวสับผสมมะเขือเทศ ถั่วฝักยาว ปรุงรสเปรี้ยวเผ็ดเค็มหวานจัดจ้าน กินคู่กับข้าวเหนียวและไก่ย่าง</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="มัสมั่น" data-category="แกง">
+        <div class="card-media">
+          <span class="emoji-tile">🍛</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>มัสมั่น</h3>
+        <span class="tag">แกง • หวานมัน</span>
+        <p>แกงกะทิรสหวานมันออกเปรี้ยวนิดๆ ใส่เนื้อหรือไก่ตุ๋นนุ่ม มันฝรั่ง ถั่วลิสง หอมเครื่องเทศ เคยติดอันดับอาหารอร่อยที่สุดในโลก</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ข้าวผัด" data-category="ผัด">
+        <div class="card-media">
+          <span class="emoji-tile">🍳</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ข้าวผัด</h3>
+        <span class="tag">ผัด • เค็มกลมกล่อม</span>
+        <p>ข้าวผัดกับไข่ หอมใหญ่ และเนื้อสัตว์ตามชอบ ปรุงรสง่ายๆ แต่หอมกลิ่นกระทะร้อน กินคู่กับแตงกวาและมะนาว</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ต้มข่าไก่" data-category="ต้ม">
+        <div class="card-media">
+          <span class="emoji-tile">🍲</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ต้มข่าไก่</h3>
+        <span class="tag">ต้ม • หอมกะทิ</span>
+        <p>ซุปกะทิหอมข่า ตะไคร้ ใบมะกรูด รสเปรี้ยวเผ็ดนุ่มนวลกว่าต้มยำ เนื้อสัมผัสข้นมันจากกะทิ</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ผัดกะเพรา" data-category="ผัด">
+        <div class="card-media">
+          <span class="emoji-tile">🌶️</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ผัดกะเพรา</h3>
+        <span class="tag">ผัด • เผ็ดร้อน</span>
+        <p>ผัดเนื้อสับหรือหมูสับกับใบกะเพราและพริก รสเผ็ดร้อนจัดจ้าน กินคู่ข้าวสวยร้อนๆ และไข่ดาว เมนูโปรดของคนไทยทุกวัย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ข้าวเหนียวมะม่วง" data-category="ของหวาน">
+        <div class="card-media">
+          <span class="emoji-tile">🥭</span>
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ข้าวเหนียวมะม่วง</h3>
+        <span class="tag">ของหวาน • หวานมัน</span>
+        <p>ข้าวเหนียวมูนหอมกะทิ เคียงมะม่วงสุกหวานฉ่ำ ราดหน้าด้วยกะทิข้นๆ ของหวานไทยที่ชาวต่างชาติหลงรัก</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
     </div>
 
-    <div class="card" data-dish="ส้มตำ" data-category="ยำ">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🥗</span>
-      <h3>ส้มตำ</h3>
-      <p>มะละกอเขียวสับผสมมะเขือเทศ ถั่วฝักยาว ปรุงรสเปรี้ยวเผ็ดเค็มหวานจัดจ้าน กินคู่กับข้าวเหนียวและไก่ย่าง</p>
-      <span class="tag">ยำ • เผ็ดจัด</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-    <div class="card" data-dish="มัสมั่น" data-category="แกง">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🍛</span>
-      <h3>มัสมั่น</h3>
-      <p>แกงกะทิรสหวานมันออกเปรี้ยวนิดๆ ใส่เนื้อหรือไก่ตุ๋นนุ่ม มันฝรั่ง ถั่วลิสง หอมเครื่องเทศ เคยติดอันดับอาหารอร่อยที่สุดในโลก</p>
-      <span class="tag">แกง • หวานมัน</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-    <div class="card" data-dish="ข้าวผัด" data-category="ผัด">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🍳</span>
-      <h3>ข้าวผัด</h3>
-      <p>ข้าวผัดกับไข่ หอมใหญ่ และเนื้อสัตว์ตามชอบ ปรุงรสง่ายๆ แต่หอมกลิ่นกระทะร้อน กินคู่กับแตงกวาและมะนาว</p>
-      <span class="tag">ผัด • เค็มกลมกล่อม</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-    <div class="card" data-dish="ต้มข่าไก่" data-category="ต้ม">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🍲</span>
-      <h3>ต้มข่าไก่</h3>
-      <p>ซุปกะทิหอมข่า ตะไคร้ ใบมะกรูด รสเปรี้ยวเผ็ดนุ่มนวลกว่าต้มยำ เนื้อสัมผัสข้นมันจากกะทิ</p>
-      <span class="tag">ต้ม • หอมกะทิ</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-    <div class="card" data-dish="ผัดกะเพรา" data-category="ผัด">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🌶️</span>
-      <h3>ผัดกะเพรา</h3>
-      <p>ผัดเนื้อสับหรือหมูสับกับใบกะเพราและพริก รสเผ็ดร้อนจัดจ้าน กินคู่ข้าวสวยร้อนๆ และไข่ดาว เมนูโปรดของคนไทยทุกวัย</p>
-      <span class="tag">ผัด • เผ็ดร้อน</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-    <div class="card" data-dish="ข้าวเหนียวมะม่วง" data-category="ของหวาน">
-      <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
-      <span class="emoji">🥭</span>
-      <h3>ข้าวเหนียวมะม่วง</h3>
-      <p>ข้าวเหนียวมูนหอมกะทิ เคียงมะม่วงสุกหวานฉ่ำ ราดหน้าด้วยกะทิข้นๆ ของหวานไทยที่ชาวต่างชาติหลงรัก</p>
-      <span class="tag">ของหวาน • หวานมัน</span>
-      <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
-    </div>
-
-  </div>
-
-  <p class="no-results" id="no-results">ไม่พบเมนูที่ตรงกับคำค้นหาหรือหมวดหมู่ที่เลือก ลองค้นหาคำอื่นดูนะ 🙏</p>
+    <p class="no-results" id="no-results">ไม่พบเมนูที่ตรงกับคำค้นหาหรือหมวดหมู่ที่เลือก ลองค้นหาคำอื่นดูนะ 🙏</p>
+  </section>
 </main>
 
-<footer>
+<footer class="site-footer">
   <p>ทำที่บ้านหรือหาชิมที่ร้านโปรดใกล้บ้านคุณ แล้วมาลิ้มลอง <strong>รสชาติไทยแท้</strong> กันวันนี้ 🇹🇭</p>
 </footer>
 
@@ -213,7 +248,7 @@
   });
 
   var searchInput = document.getElementById('search-input');
-  var categoryButtons = document.querySelectorAll('.category-btn');
+  var categoryButtons = document.querySelectorAll('.category-tab');
   var menuCards = document.querySelectorAll('#menu-grid .card');
   var noResults = document.getElementById('no-results');
   var activeCategory = 'all';
