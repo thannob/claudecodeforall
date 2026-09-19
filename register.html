@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ลงทะเบียนสมาชิก | แนะนำอาหารไทย</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,200;0,300;0,400;0,500;0,700;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a class="nav-logo" href="index.html">แนะนำอาหารไทย</a>
+    <a class="pill-outline" href="index.html">← กลับหน้าแรก</a>
+  </div>
+</header>
+
+<main>
+  <section class="section" id="register-section">
+    <div class="section-title">
+      <p class="eyebrow">สมัครสมาชิก</p>
+      <h2 class="section-heading">ลงทะเบียนสมาชิก</h2>
+      <p class="section-sub">กรอกข้อมูลเพื่อลงทะเบียนเป็นสมาชิก</p>
+    </div>
+
+    <form id="register-form" class="filter-box" style="flex-direction:column; align-items:stretch; gap:1rem; max-width:420px; margin:0 auto;">
+      <input id="reg-name" class="search-input" type="text" placeholder="ชื่อ-นามสกุล" required>
+      <input id="reg-email" class="search-input" type="email" placeholder="อีเมล" required>
+      <input id="reg-phone" class="search-input" type="tel" placeholder="เบอร์โทรศัพท์ (ไม่บังคับ)">
+      <button class="pill-fill" type="submit">ลงทะเบียน</button>
+      <p id="register-result"></p>
+    </form>
+  </section>
+</main>
+
+<script>
+(function () {
+  var SUPABASE_URL = 'https://ormvnstihnhjwyhfrazw.supabase.co';
+  var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9ybXZuc3RpaG5oand5aGZyYXp3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODk3OTg2MjYsImV4cCI6MjEwNTM3NDYyNn0.yJ4tQJaYi4gnsPUaZqJplIk6qWseL8IXUT8VeygtGzU';
+
+  var form = document.getElementById('register-form');
+  var result = document.getElementById('register-result');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    result.textContent = 'กำลังลงทะเบียน...';
+
+    fetch(SUPABASE_URL + '/rest/v1/members', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'apikey': SUPABASE_ANON_KEY,
+        'Authorization': 'Bearer ' + SUPABASE_ANON_KEY
+      },
+      body: JSON.stringify({
+        name: document.getElementById('reg-name').value.trim(),
+        email: document.getElementById('reg-email').value.trim(),
+        phone: document.getElementById('reg-phone').value.trim() || null
+      })
+    }).then(function (res) {
+      if (!res.ok) throw new Error('request failed');
+      result.textContent = 'ลงทะเบียนสำเร็จ ขอบคุณค่ะ!';
+      form.reset();
+    }).catch(function () {
+      result.textContent = 'เกิดข้อผิดพลาด กรุณาลองใหม่อีกครั้ง';
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
