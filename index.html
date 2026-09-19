@@ -53,6 +53,8 @@
         <button class="category-tab" type="button" data-category="แกง">แกง</button>
         <button class="category-tab" type="button" data-category="ยำ">ยำ</button>
         <button class="category-tab" type="button" data-category="ของหวาน">ของหวาน</button>
+        <button class="category-tab" type="button" data-category="ทอด">ทอด</button>
+        <button class="category-tab" type="button" data-category="ทานเล่น">ทานเล่น</button>
       </div>
     </div>
 
@@ -71,7 +73,7 @@
 
       <div class="card" data-dish="ผัดไทย" data-category="ผัด">
         <div class="card-media">
-          <span class="emoji-tile">🍜</span>
+          <img class="dish-photo" src="images/pad-thai.jpg" alt="ผัดไทย" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ผัดไทย</h3>
@@ -82,7 +84,7 @@
 
       <div class="card" data-dish="แกงเขียวหวาน" data-category="แกง">
         <div class="card-media">
-          <span class="emoji-tile">🥘</span>
+          <img class="dish-photo" src="images/green-curry.jpg" alt="แกงเขียวหวาน" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>แกงเขียวหวาน</h3>
@@ -93,7 +95,7 @@
 
       <div class="card" data-dish="ส้มตำ" data-category="ยำ">
         <div class="card-media">
-          <span class="emoji-tile">🥗</span>
+          <img class="dish-photo" src="images/som-tam.jpg" alt="ส้มตำ" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ส้มตำ</h3>
@@ -104,7 +106,7 @@
 
       <div class="card" data-dish="มัสมั่น" data-category="แกง">
         <div class="card-media">
-          <span class="emoji-tile">🍛</span>
+          <img class="dish-photo" src="images/massaman.jpg" alt="มัสมั่น" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>มัสมั่น</h3>
@@ -115,7 +117,7 @@
 
       <div class="card" data-dish="ข้าวผัด" data-category="ผัด">
         <div class="card-media">
-          <span class="emoji-tile">🍳</span>
+          <img class="dish-photo" src="images/khao-pad.jpg" alt="ข้าวผัด" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ข้าวผัด</h3>
@@ -126,7 +128,7 @@
 
       <div class="card" data-dish="ต้มข่าไก่" data-category="ต้ม">
         <div class="card-media">
-          <span class="emoji-tile">🍲</span>
+          <img class="dish-photo" src="images/tom-kha-gai.jpg" alt="ต้มข่าไก่" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ต้มข่าไก่</h3>
@@ -137,7 +139,7 @@
 
       <div class="card" data-dish="ผัดกะเพรา" data-category="ผัด">
         <div class="card-media">
-          <span class="emoji-tile">🌶️</span>
+          <img class="dish-photo" src="images/pad-kaprao.jpg" alt="ผัดกะเพรา" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ผัดกะเพรา</h3>
@@ -148,7 +150,7 @@
 
       <div class="card" data-dish="ข้าวเหนียวมะม่วง" data-category="ของหวาน">
         <div class="card-media">
-          <span class="emoji-tile">🥭</span>
+          <img class="dish-photo" src="images/mango-sticky-rice.jpg" alt="ข้าวเหนียวมะม่วง" loading="lazy">
           <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
         </div>
         <h3>ข้าวเหนียวมะม่วง</h3>
@@ -157,7 +159,174 @@
         <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
       </div>
 
+      <div class="card" data-dish="ก๋วยเตี๋ยวเรือ" data-category="ต้ม">
+        <div class="card-media">
+          <img class="dish-photo" src="images/boat-noodles.jpg" alt="ก๋วยเตี๋ยวเรือ" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ก๋วยเตี๋ยวเรือ</h3>
+        <span class="tag">ต้ม • เข้มข้นสมุนไพร</span>
+        <p>ก๋วยเตี๋ยวน้ำซุปเข้มข้นสีเข้มจากเลือดหมู หอมเครื่องเทศและสมุนไพรไทยกลิ่นจัด เสิร์ฟเป็นถ้วยเล็กรสจัดจ้าน เป็นเอกลักษณ์ของก๋วยเตี๋ยวริมคลอง</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ยำวุ้นเส้น" data-category="ยำ">
+        <div class="card-media">
+          <img class="dish-photo" src="images/yum-woon-sen.jpg" alt="ยำวุ้นเส้น" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ยำวุ้นเส้น</h3>
+        <span class="tag">ยำ • เปรี้ยวเผ็ดจัดจ้าน</span>
+        <p>วุ้นเส้นลวกยำกับกุ้งสดและหมูสับ ใส่เห็ดหูหนูและมะเขือเทศ ปรุงรสเปรี้ยวเผ็ดแซ่บกลมกล่อม เป็นยำยอดนิยมของคนไทยทุกวัย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ทับทิมกรอบ" data-category="ของหวาน">
+        <div class="card-media">
+          <img class="dish-photo" src="images/tub-tim-krob.jpg" alt="ทับทิมกรอบ" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ทับทิมกรอบ</h3>
+        <span class="tag">ของหวาน • หวานเย็นสดชื่น</span>
+        <p>แห้วเชื่อมคลุกแป้งสีแดงสดใสคล้ายทับทิม ราดด้วยกะทิสดหอมมันและน้ำแข็งไส หวานเย็นชื่นใจเหมาะกับหน้าร้อน</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="บะหมี่" data-category="ต้ม">
+        <div class="card-media">
+          <img class="dish-photo" src="images/ba-mee.jpg" alt="บะหมี่" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>บะหมี่</h3>
+        <span class="tag">ต้ม • หอมน้ำซุปกระดูกหมู</span>
+        <p>เส้นบะหมี่เหนียวนุ่มลวกในน้ำซุปกระดูกหมูหอมกระเทียมเจียว ใส่หมูแดง ลูกชิ้น และผักกาดดอง รสกลมกล่อมอุ่นท้อง เป็นอาหารเช้าหรือมื้อเบาที่คนไทยกินกันทุกวัน</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="แกงส้ม" data-category="แกง">
+        <div class="card-media">
+          <img class="dish-photo" src="images/gaeng-som.jpg" alt="แกงส้ม" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>แกงส้ม</h3>
+        <span class="tag">แกง • เปรี้ยวเผ็ดจัด</span>
+        <p>แกงรสเปรี้ยวเผ็ดจัดจ้านจากพริกแกงส้มและมะขามเปียก ใส่ปลาหรือกุ้งสด ผักรวมอย่างผักบุ้งและมะละกอ กินคู่ข้าวสวยร้อนๆ ให้รสชาติจัดจ้านถึงเครื่อง</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ไก่ทอด" data-category="ทอด">
+        <div class="card-media">
+          <img class="dish-photo" src="images/gai-tod.jpg" alt="ไก่ทอด" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ไก่ทอด</h3>
+        <span class="tag">ทอด • กรอบนอกนุ่มใน</span>
+        <p>ไก่ชิ้นหมักเครื่องเทศและกระเทียมพริกไทยจนหอมซึม ทอดจนผิวกรอบเหลืองทองเนื้อในนุ่มฉ่ำ กินคู่น้ำจิ้มไทยและข้าวเหนียว เป็นเมนูโปรดของคนไทยทุกวัย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ขนมหม้อแกง" data-category="ของหวาน">
+        <div class="card-media">
+          <img class="dish-photo" src="images/khanom-mo-kaeng.jpg" alt="ขนมหม้อแกง" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ขนมหม้อแกง</h3>
+        <span class="tag">ของหวาน • หวานมันหอมไข่</span>
+        <p>ขนมไทยโบราณเนื้อเนียนหอมไข่และกะทิ อบจนหน้าเป็นสีน้ำตาลทองกรอบบาง เนื้อด้านในนุ่มหวานมัน โรยหน้าด้วยหอมเจียว เป็นของหวานที่อยู่คู่ครัวไทยมานาน</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ลาบ" data-category="ยำ">
+        <div class="card-media">
+          <img class="dish-photo" src="images/larb.jpg" alt="ลาบ" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ลาบ</h3>
+        <span class="tag">ยำ • เผ็ดจัดสมุนไพร</span>
+        <p>หมูสับลวกคลุกข้าวคั่วป่นหอมกรุ่น ปรุงรสเปรี้ยวเผ็ดเค็มจากมะนาวและพริกป่น ใส่หอมแดงและใบสะระแหน่ กินคู่ผักสดและข้าวเหนียว เป็นเมนูเด่นของอาหารอีสาน</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="เมี่ยงคำ" data-category="ทานเล่น">
+        <div class="card-media">
+          <img class="dish-photo" src="images/miang-kham.jpg" alt="เมี่ยงคำ" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>เมี่ยงคำ</h3>
+        <span class="tag">ทานเล่น • เปรี้ยวเค็มหวาน</span>
+        <p>ใบชะพลูห่อเครื่องเคียงหลากรส ทั้งกุ้งแห้ง มะพร้าวคั่ว ขิงซอย และถั่วลิสง ราดด้วยน้ำเมี่ยงรสเข้มข้น กัดคำเดียวได้รสเปรี้ยวเค็มหวานครบในปากเดียว</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="พะแนง" data-category="แกง">
+        <div class="card-media">
+          <img class="dish-photo" src="images/panang-curry.jpg" alt="พะแนง" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>พะแนง</h3>
+        <span class="tag">แกง • หวานมันเข้มข้น</span>
+        <p>แกงกะทิข้นรสหวานมันเข้มข้นกว่าแกงเขียวหวาน ใส่เนื้อหมูหรือไก่ตุ๋นนุ่ม โรยหน้าด้วยใบมะกรูดซอยและพริกชี้ฟ้า หอมเครื่องแกงพะแนงเข้มข้นถึงรส</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ปลาหมึกทอด" data-category="ทอด">
+        <div class="card-media">
+          <img class="dish-photo" src="images/pla-meuk-tod.jpg" alt="ปลาหมึกทอด" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ปลาหมึกทอด</h3>
+        <span class="tag">ทอด • กรอบนอกนุ่มใน</span>
+        <p>ปลาหมึกสดหั่นชิ้นชุบแป้งทอดกรอบจนเหลืองทอง เนื้อในยังนุ่มหวาน กินคู่น้ำจิ้มซีฟู้ดรสเปรี้ยวเผ็ดจัดจ้านและมะนาว เป็นของว่างยอดนิยมริมทะเล</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ปลาทอด" data-category="ทอด">
+        <div class="card-media">
+          <img class="dish-photo" src="images/pla-tod.jpg" alt="ปลาทอด" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ปลาทอด</h3>
+        <span class="tag">ทอด • กรอบนอกฉ่ำใน</span>
+        <p>ปลาทั้งตัวทอดจนผิวกรอบเหลืองทอง เนื้อในยังฉ่ำนุ่ม หอมกลิ่นกระเทียมและพริกไทย กินคู่มะนาวและน้ำปลาพริก เมนูอาหารทะเลแบบไทยแท้ที่ทำง่ายได้ทุกบ้าน</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="แกงเผ็ด" data-category="แกง">
+        <div class="card-media">
+          <img class="dish-photo" src="images/red-curry.jpg" alt="แกงเผ็ด" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>แกงเผ็ด</h3>
+        <span class="tag">แกง • เผ็ดร้อนกะทิ</span>
+        <p>แกงกะทิรสเผ็ดร้อนจากพริกแกงแดง ใส่เนื้อไก่หรือหมู มะเขือเปราะ และใบโหระพา กลิ่นหอมฉุนของพริกแกงเข้มข้นถึงเครื่อง เผ็ดร้อนกำลังดีคู่ข้าวสวย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="สะเต๊ะ" data-category="ทอด">
+        <div class="card-media">
+          <img class="dish-photo" src="images/satay.jpg" alt="สะเต๊ะ" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>สะเต๊ะ</h3>
+        <span class="tag">ทอด • หอมย่างเครื่องเทศ</span>
+        <p>เนื้อหมูหรือไก่หมักเครื่องเทศหอมขมิ้น เสียบไม้ย่างจนสุกหอมกรุ่น กินคู่น้ำจิ้มถั่วลิสงข้นๆ และอาจาด เป็นของว่างริมทางยอดนิยมของคนไทย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
+      <div class="card" data-dish="ทอดมันปลา" data-category="ทอด">
+        <div class="card-media">
+          <img class="dish-photo" src="images/tod-man-pla.jpg" alt="ทอดมันปลา" loading="lazy">
+          <button class="fav-btn" type="button" aria-label="เพิ่มในรายการโปรด">♡</button>
+        </div>
+        <h3>ทอดมันปลา</h3>
+        <span class="tag">ทอด • เผ็ดกรอบเหนียวนุ่ม</span>
+        <p>ปลาสดสับผสมพริกแกงแดงและถั่วฝักยาวซอย นวดจนเหนียวก่อนทอดให้กรอบนอกเหนียวนุ่มใน กินคู่น้ำจิ้มอาจาดแตงกวารสเปรี้ยวหวาน เป็นของว่างขึ้นชื่อของไทย</p>
+        <a class="detail-link" href="#">ดูส่วนประกอบ →</a>
+      </div>
+
     </div>
+
+    <div class="pagination" id="pagination"></div>
 
     <p class="no-results" id="no-results">ไม่พบเมนูที่ตรงกับคำค้นหาหรือหมวดหมู่ที่เลือก ลองค้นหาคำอื่นดูนะ 🙏</p>
   </section>
@@ -165,6 +334,7 @@
 
 <footer class="site-footer">
   <p>ทำที่บ้านหรือหาชิมที่ร้านโปรดใกล้บ้านคุณ แล้วมาลิ้มลอง <strong>รสชาติไทยแท้</strong> กันวันนี้ 🇹🇭</p>
+  <p class="photo-credits">ภาพประกอบจาก Wikimedia Commons: <a href="https://commons.wikimedia.org/wiki/File:Thai_Green_Curry_with_Rice.jpg" target="_blank" rel="noopener">Kenamparo</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Som_Tam_green_papaya_salad,_Bangkok,_Thailand.jpg" target="_blank" rel="noopener">Vyacheslav Argenberg</a> (CC BY 4.0), <a href="https://commons.wikimedia.org/wiki/File:Beef_Massaman_curry_with_brown_rice.jpg" target="_blank" rel="noopener">Vee Satayamas</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Tom_Kha_Gai_-_Thai_Food.jpg" target="_blank" rel="noopener">TeamTeam2002</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Mango_sticky_rice.jpg" target="_blank" rel="noopener">Muzirian</a> (CC BY-SA 4.0), <a href="https://commons.wikimedia.org/wiki/File:Yum_woun_sen.jpg" target="_blank" rel="noopener">Pimpakan</a> (CC BY-SA 3.0), <a href="https://commons.wikimedia.org/wiki/File:%E0%B8%97%E0%B8%B1%E0%B8%9A%E0%B8%97%E0%B8%B4%E0%B8%A1%E0%B8%81%E0%B8%A3%E0%B8%AD%E0%B8%9A.jpg" target="_blank" rel="noopener">Isriya Paireepairit</a> (CC BY 2.0)</p>
 </footer>
 
 <script>
@@ -178,7 +348,22 @@
     { name: 'ข้าวผัด', emoji: '🍳' },
     { name: 'ต้มข่าไก่', emoji: '🍲' },
     { name: 'ผัดกะเพรา', emoji: '🌶️' },
-    { name: 'ข้าวเหนียวมะม่วง', emoji: '🥭' }
+    { name: 'ข้าวเหนียวมะม่วง', emoji: '🥭' },
+    { name: 'ก๋วยเตี๋ยวเรือ', emoji: '🥣' },
+    { name: 'ยำวุ้นเส้น', emoji: '🦐' },
+    { name: 'ทับทิมกรอบ', emoji: '🍧' },
+    { name: 'บะหมี่', emoji: '🍜' },
+    { name: 'แกงส้ม', emoji: '🍲' },
+    { name: 'ไก่ทอด', emoji: '🍗' },
+    { name: 'ขนมหม้อแกง', emoji: '🍮' },
+    { name: 'ลาบ', emoji: '🥗' },
+    { name: 'เมี่ยงคำ', emoji: '🍃' },
+    { name: 'พะแนง', emoji: '🍛' },
+    { name: 'ปลาหมึกทอด', emoji: '🦑' },
+    { name: 'ปลาทอด', emoji: '🐟' },
+    { name: 'แกงเผ็ด', emoji: '🌶️' },
+    { name: 'สะเต๊ะ', emoji: '🍢' },
+    { name: 'ทอดมันปลา', emoji: '🐠' }
   ];
 
   var lastPick = null;
@@ -252,13 +437,16 @@
   var categoryButtons = document.querySelectorAll('.category-tab');
   var menuCards = document.querySelectorAll('#menu-grid .card');
   var noResults = document.getElementById('no-results');
+  var pagination = document.getElementById('pagination');
   var activeCategory = 'all';
+  var PAGE_SIZE = 8;
+  var currentPage = 1;
+  var filteredCards = [];
 
   function applyFilters() {
     var query = searchInput.value.trim().toLowerCase();
-    var visibleCount = 0;
 
-    menuCards.forEach(function (card) {
+    filteredCards = Array.prototype.filter.call(menuCards, function (card) {
       var name = card.dataset.dish.toLowerCase();
       var description = card.querySelector('p').textContent.toLowerCase();
       var tag = card.querySelector('.tag').textContent.toLowerCase();
@@ -266,15 +454,51 @@
 
       var matchesQuery = !query || name.indexOf(query) !== -1 || description.indexOf(query) !== -1 || tag.indexOf(query) !== -1;
       var matchesCategory = activeCategory === 'all' || category === activeCategory;
-      var isVisible = matchesQuery && matchesCategory;
-
-      card.classList.toggle('is-hidden', !isVisible);
-      if (isVisible) {
-        visibleCount++;
-      }
+      return matchesQuery && matchesCategory;
     });
 
-    noResults.classList.toggle('show', visibleCount === 0);
+    currentPage = 1;
+    renderPage();
+  }
+
+  function renderPage() {
+    var totalPages = Math.max(1, Math.ceil(filteredCards.length / PAGE_SIZE));
+    currentPage = Math.min(currentPage, totalPages);
+    var start = (currentPage - 1) * PAGE_SIZE;
+    var pageCards = filteredCards.slice(start, start + PAGE_SIZE);
+
+    menuCards.forEach(function (card) {
+      card.classList.toggle('is-hidden', pageCards.indexOf(card) === -1);
+    });
+
+    noResults.classList.toggle('show', filteredCards.length === 0);
+    renderPagination(totalPages);
+  }
+
+  function renderPagination(totalPages) {
+    pagination.innerHTML = '';
+    if (filteredCards.length === 0) {
+      return;
+    }
+
+    function makePageBtn(label, page, disabled, active) {
+      var btn = document.createElement('button');
+      btn.type = 'button';
+      btn.className = 'page-btn' + (active ? ' active' : '');
+      btn.textContent = label;
+      btn.disabled = !!disabled;
+      btn.addEventListener('click', function () {
+        currentPage = page;
+        renderPage();
+      });
+      return btn;
+    }
+
+    pagination.appendChild(makePageBtn('‹', currentPage - 1, currentPage === 1, false));
+    for (var i = 1; i <= totalPages; i++) {
+      pagination.appendChild(makePageBtn(String(i), i, false, i === currentPage));
+    }
+    pagination.appendChild(makePageBtn('›', currentPage + 1, currentPage === totalPages, false));
   }
 
   searchInput.addEventListener('input', applyFilters);
